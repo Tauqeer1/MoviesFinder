@@ -1,3 +1,54 @@
-<h1>
-  {{title}}
-</h1>
+<nav class="navbar navbar-fixed-top navbar-inverse navbar-color">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target=".collapseNavbar"
+              aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerLink="/">Movies Finder</a>
+    </div>
+    <div class="collapse navbar-collapse collapseNavbar">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="/upcoming">Upcoming movies</a></li>
+        <li routerLinkActive="active"><a routerLink="popular/series">Popular Series</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>  <!--navbar-->
+
+<div class="container-fluid app-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+      <nav class="navbar navbar-default side-nav" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".movies-cat">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse movies-cat">
+          <div class="panel-heading">Movies Category</div>
+          <ul class="nav nav-stacked">
+            <li *ngFor="let genre of genres">
+              <a routerLink="/genres/{{genre.id}}/{{genre.name}}" routerLinkActive="active" class="list-group-item side-nav-item">
+                {{genre.name}}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <hr>
+  <footer>
+    <p>&copy; 2017 Company, Inc.</p>
+  </footer>
+</div>
