@@ -16,10 +16,9 @@ body {
   background-color: #4e5d6c;
   border: none;
 }
-a.side-nav-item:hover {
+.active > a , .active > a:hover, .active> a:focus {
   color: #ebebeb !important;
-  background-color: #485563 !important;
-  text-decoration: none !important;
+  background-color: #c85e17 !important;
 }
 .app-container {
   margin-top: 60px;
