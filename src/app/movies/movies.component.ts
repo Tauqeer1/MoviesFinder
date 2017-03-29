@@ -10,7 +10,9 @@ import { MoviesService } from '../services/movies.service';
 
 export class MoviesComponent {
 
+  title: string;
   constructor() {
+    this.title = 'Movies Component';
   }
 
 }

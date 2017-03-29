@@ -8,12 +8,14 @@ import { appRoutes } from './routes/app.routes';
 import { MoviesComponent } from './movies/movies.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { PopularSeriesComponent } from './popular-series/popular-series.component';
+import { MovieCardComponent } from './movie-card/movie-card.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
+    MovieCardComponent,
     UpcomingComponent,
     PopularSeriesComponent
   ],

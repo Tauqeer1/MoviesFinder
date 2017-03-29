@@ -1,6 +1,37 @@
-<div>
+<p class="pull-right visible-xs">
+  <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+</p>
+<div class="jumbotron">
+  <p>Search for a movie using the form below</p>
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for movies..." [(ngModel)]="seachStr" name="searchStr" (keyup.enter)="searchMovies()" ) />
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" (click)="searchMovie()">Go!</button>
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+<div *ngif="searchRes">
+  <h3 class="orange-text">Search Results</h3>
+  <div class="row is-flex">
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngfor="let movie of searchRes; let i=index;">
+      <movie-card [movie]="movie"></movie-card>
+    </div>
+  </div>
+</div>
+<h3 class="orange-text">Top Rated Movies</h3>
+<div class="row is-flex">
+  <div class="col-sm-6 col-md-4 col-lg-3 col-xs-6" *ngfor="let movie of topRatedResults; let i=index;">
+    <movie-card [movie]="movie"></movie-card>
+  </div>
+</div>
 
-
-  <h1>{{title}}</h1>
-
+<h3 class="orange-text">Popular Movies</h3>
+<div class="row is-flex">
+  <div class="col-sm-3" *ngFor="let movie of popularList; let i = index;">
+    <movie-card [movie]="movie"></movie-card>
+  </div>
 </div>
