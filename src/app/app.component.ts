@@ -5,7 +5,7 @@ import { MoviesService } from './services/movies.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [MoviesService]
+  providers: [MoviesService]    //providers tell angular to create a fresh instance of service
 })
 export class AppComponent {
 
